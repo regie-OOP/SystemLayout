@@ -78,6 +78,7 @@ public class YankeeBite extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel4 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -147,18 +148,21 @@ public class YankeeBite extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(700, 800));
 
-        jPanel4.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setPreferredSize(new java.awt.Dimension(699, 125));
+
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/header1.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 733, Short.MAX_VALUE)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 125, Short.MAX_VALUE)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         getContentPane().add(jPanel4, java.awt.BorderLayout.PAGE_START);
@@ -273,7 +277,7 @@ public class YankeeBite extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new java.awt.BorderLayout());
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel2.setBackground(new java.awt.Color(219, 58, 7));
         jPanel2.setPreferredSize(new java.awt.Dimension(549, 240));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -310,7 +314,7 @@ public class YankeeBite extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -333,7 +337,6 @@ public class YankeeBite extends javax.swing.JFrame {
 
         Bf1.setBackground(new java.awt.Color(255, 255, 255));
         Bf1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEYANKEE/7.png"))); // NOI18N
-        Bf1.setText("BF1");
         Bf1.setBorderPainted(false);
         Bf1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -343,7 +346,6 @@ public class YankeeBite extends javax.swing.JFrame {
 
         Bf2.setBackground(new java.awt.Color(255, 255, 255));
         Bf2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEYANKEE/8.png"))); // NOI18N
-        Bf2.setText("BF2");
         Bf2.setBorderPainted(false);
         Bf2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -353,7 +355,6 @@ public class YankeeBite extends javax.swing.JFrame {
 
         Bf3.setBackground(new java.awt.Color(255, 255, 255));
         Bf3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEYANKEE/9.png"))); // NOI18N
-        Bf3.setText("BF3");
         Bf3.setBorderPainted(false);
         Bf3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -363,7 +364,6 @@ public class YankeeBite extends javax.swing.JFrame {
 
         Bf4.setBackground(new java.awt.Color(255, 255, 255));
         Bf4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEYANKEE/10.png"))); // NOI18N
-        Bf4.setText("BF4");
         Bf4.setBorderPainted(false);
         Bf4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -373,7 +373,6 @@ public class YankeeBite extends javax.swing.JFrame {
 
         Bf5.setBackground(new java.awt.Color(255, 255, 255));
         Bf5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEYANKEE/11.png"))); // NOI18N
-        Bf5.setText("BF5");
         Bf5.setBorderPainted(false);
         Bf5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -383,7 +382,6 @@ public class YankeeBite extends javax.swing.JFrame {
 
         Bf6.setBackground(new java.awt.Color(255, 255, 255));
         Bf6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEYANKEE/12.png"))); // NOI18N
-        Bf6.setText("BF6");
         Bf6.setBorderPainted(false);
         Bf6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -396,20 +394,16 @@ public class YankeeBite extends javax.swing.JFrame {
         BurgerLayout.setHorizontalGroup(
             BurgerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BurgerLayout.createSequentialGroup()
+                .addGap(125, 125, 125)
                 .addGroup(BurgerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Bf4, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(BurgerLayout.createSequentialGroup()
-                        .addGap(131, 131, 131)
-                        .addComponent(bfSpinner4, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(BurgerLayout.createSequentialGroup()
-                        .addGap(125, 125, 125)
+                        .addGap(6, 6, 6)
                         .addGroup(BurgerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(BurgerLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(bfSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(BurgerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(Bf1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Bf4, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(29, 29, 29)
+                            .addComponent(bfSpinner4, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bfSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(Bf1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
                 .addGroup(BurgerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Bf2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bf5, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -418,7 +412,7 @@ public class YankeeBite extends javax.swing.JFrame {
                         .addGroup(BurgerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(bfSpinner5, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(bfSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(26, 26, 26)
+                .addGap(35, 35, 35)
                 .addGroup(BurgerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Bf3, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bf6, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -427,7 +421,7 @@ public class YankeeBite extends javax.swing.JFrame {
                         .addGroup(BurgerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(bfSpinner6, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(bfSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         BurgerLayout.setVerticalGroup(
             BurgerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -442,7 +436,7 @@ public class YankeeBite extends javax.swing.JFrame {
                     .addComponent(bfSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bfSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bfSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
+                .addGap(44, 44, 44)
                 .addGroup(BurgerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Bf4, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bf5, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -452,7 +446,7 @@ public class YankeeBite extends javax.swing.JFrame {
                     .addComponent(bfSpinner4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bfSpinner5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bfSpinner6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(948, Short.MAX_VALUE))
+                .addContainerGap(1008, Short.MAX_VALUE))
         );
 
         Category.add(Burger);
@@ -461,76 +455,96 @@ public class YankeeBite extends javax.swing.JFrame {
 
         B1.setBackground(new java.awt.Color(255, 255, 255));
         B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEYANKEE/13.png"))); // NOI18N
-        B1.setText("B1");
         B1.setBorderPainted(false);
+        B1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B1ActionPerformed(evt);
+            }
+        });
 
         B2.setBackground(new java.awt.Color(255, 255, 255));
         B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEYANKEE/14.png"))); // NOI18N
-        B2.setText("B2");
         B2.setBorderPainted(false);
+        B2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B2ActionPerformed(evt);
+            }
+        });
 
         B3.setBackground(new java.awt.Color(255, 255, 255));
         B3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEYANKEE/15.png"))); // NOI18N
-        B3.setText("B3");
         B3.setBorderPainted(false);
+        B3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B3ActionPerformed(evt);
+            }
+        });
 
         B4.setBackground(new java.awt.Color(255, 255, 255));
         B4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEYANKEE/16.png"))); // NOI18N
-        B4.setText("B4");
         B4.setBorderPainted(false);
+        B4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B4ActionPerformed(evt);
+            }
+        });
 
         B5.setBackground(new java.awt.Color(255, 255, 255));
         B5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEYANKEE/17.png"))); // NOI18N
-        B5.setText("B5");
         B5.setBorderPainted(false);
+        B5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B5ActionPerformed(evt);
+            }
+        });
 
         B6.setBackground(new java.awt.Color(255, 255, 255));
         B6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEYANKEE/18.png"))); // NOI18N
-        B6.setText("B6");
         B6.setBorderPainted(false);
+        B6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B6ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout BreakfastLayout = new javax.swing.GroupLayout(Breakfast);
         Breakfast.setLayout(BreakfastLayout);
         BreakfastLayout.setHorizontalGroup(
             BreakfastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BreakfastLayout.createSequentialGroup()
-                .addGroup(BreakfastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(BreakfastLayout.createSequentialGroup()
-                        .addGap(123, 123, 123)
-                        .addComponent(bSpinner4, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 185, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BreakfastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BreakfastLayout.createSequentialGroup()
-                            .addComponent(B1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(28, 28, 28)
-                            .addComponent(B2, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(BreakfastLayout.createSequentialGroup()
-                            .addGroup(BreakfastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(BreakfastLayout.createSequentialGroup()
-                                    .addGap(6, 6, 6)
-                                    .addComponent(bSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(BreakfastLayout.createSequentialGroup()
-                                    .addComponent(B4, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
-                                    .addGap(32, 32, 32)))
-                            .addGroup(BreakfastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(BreakfastLayout.createSequentialGroup()
-                                    .addGap(1, 1, 1)
-                                    .addComponent(bSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(B5, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(BreakfastLayout.createSequentialGroup()
-                                    .addGap(6, 6, 6)
-                                    .addComponent(bSpinner5, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addGap(26, 26, 26)
+                .addGap(125, 125, 125)
                 .addGroup(BreakfastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(B3, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(B6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(B4, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(B1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(BreakfastLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addGroup(BreakfastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(bSpinner4, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(35, 35, 35)
+                .addGroup(BreakfastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(B2, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(B5, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(BreakfastLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(BreakfastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(bSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bSpinner5, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(29, 29, 29)
+                .addGroup(BreakfastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(BreakfastLayout.createSequentialGroup()
+                        .addGroup(BreakfastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(bSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bSpinner6, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(33, 33, 33))
+                            .addComponent(B6, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BreakfastLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                        .addGroup(BreakfastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(BreakfastLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(bSpinner6, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(B3, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27))))
         );
         BreakfastLayout.setVerticalGroup(
             BreakfastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -543,19 +557,19 @@ public class YankeeBite extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(BreakfastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(47, 47, 47)
-                .addGroup(BreakfastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(B4)
+                    .addComponent(bSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43)
+                .addGroup(BreakfastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(B5)
+                    .addComponent(B4, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(B6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(BreakfastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(BreakfastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(bSpinner4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bSpinner5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bSpinner6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(950, Short.MAX_VALUE))
+                .addContainerGap(1019, Short.MAX_VALUE))
         );
 
         Category.add(Breakfast);
@@ -564,17 +578,24 @@ public class YankeeBite extends javax.swing.JFrame {
 
         D1.setBackground(new java.awt.Color(255, 255, 255));
         D1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEYANKEE/25.png"))); // NOI18N
-        D1.setText("D1");
         D1.setBorderPainted(false);
+        D1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                D1ActionPerformed(evt);
+            }
+        });
 
         D2.setBackground(new java.awt.Color(255, 255, 255));
         D2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEYANKEE/26.png"))); // NOI18N
-        D2.setText("D2");
         D2.setBorderPainted(false);
+        D2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                D2ActionPerformed(evt);
+            }
+        });
 
         D3.setBackground(new java.awt.Color(255, 255, 255));
         D3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEYANKEE/27.png"))); // NOI18N
-        D3.setText("D3");
         D3.setBorderPainted(false);
         D3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -584,52 +605,63 @@ public class YankeeBite extends javax.swing.JFrame {
 
         D4.setBackground(new java.awt.Color(255, 255, 255));
         D4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEYANKEE/28.png"))); // NOI18N
-        D4.setText("D4");
         D4.setBorderPainted(false);
+        D4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                D4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout DrinksLayout = new javax.swing.GroupLayout(Drinks);
         Drinks.setLayout(DrinksLayout);
         DrinksLayout.setHorizontalGroup(
             DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DrinksLayout.createSequentialGroup()
-                .addContainerGap(130, Short.MAX_VALUE)
+                .addGap(125, 125, 125)
                 .addGroup(DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(dSpinner4, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(DrinksLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(dSpinner4, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(D4, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(DrinksLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(dSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(D1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
-                .addGroup(DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(D2, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(DrinksLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(dSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(D3, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17))
+                        .addGroup(DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(D1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(DrinksLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(dSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(35, 35, 35)
+                        .addGroup(DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(D2, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(DrinksLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(dSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(35, 35, 35)
+                        .addGroup(DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(DrinksLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(dSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(D3, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         DrinksLayout.setVerticalGroup(
             DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DrinksLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addGroup(DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(D3, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(D1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(D2, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(D1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(D2, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(D3, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(dSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(dSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(dSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
+                .addGap(44, 44, 44)
                 .addComponent(D4, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dSpinner4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(954, Short.MAX_VALUE))
+                .addContainerGap(1020, Short.MAX_VALUE))
         );
 
         Category.add(Drinks);
@@ -639,7 +671,6 @@ public class YankeeBite extends javax.swing.JFrame {
 
         Hm1.setBackground(new java.awt.Color(255, 255, 255));
         Hm1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEYANKEE/1_1.png"))); // NOI18N
-        Hm1.setText("HM1");
         Hm1.setBorderPainted(false);
         Hm1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -649,7 +680,6 @@ public class YankeeBite extends javax.swing.JFrame {
 
         Hm2.setBackground(new java.awt.Color(255, 255, 255));
         Hm2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEYANKEE/2_1.png"))); // NOI18N
-        Hm2.setText("HM2");
         Hm2.setBorderPainted(false);
         Hm2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -659,7 +689,6 @@ public class YankeeBite extends javax.swing.JFrame {
 
         Hm3.setBackground(new java.awt.Color(255, 255, 255));
         Hm3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEYANKEE/3_1.png"))); // NOI18N
-        Hm3.setText("HM3");
         Hm3.setBorderPainted(false);
         Hm3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -669,7 +698,6 @@ public class YankeeBite extends javax.swing.JFrame {
 
         Hm4.setBackground(new java.awt.Color(255, 255, 255));
         Hm4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEYANKEE/4_1.png"))); // NOI18N
-        Hm4.setText("HM4");
         Hm4.setBorderPainted(false);
         Hm4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -679,7 +707,6 @@ public class YankeeBite extends javax.swing.JFrame {
 
         Hm5.setBackground(new java.awt.Color(255, 255, 255));
         Hm5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEYANKEE/5_1.png"))); // NOI18N
-        Hm5.setText("HM5");
         Hm5.setBorderPainted(false);
         Hm5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -689,7 +716,6 @@ public class YankeeBite extends javax.swing.JFrame {
 
         Hm6.setBackground(new java.awt.Color(255, 255, 255));
         Hm6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEYANKEE/6.png"))); // NOI18N
-        Hm6.setText("HM6");
         Hm6.setBorderPainted(false);
         Hm6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -702,63 +728,77 @@ public class YankeeBite extends javax.swing.JFrame {
         HeavyMealLayout.setHorizontalGroup(
             HeavyMealLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HeavyMealLayout.createSequentialGroup()
+                .addGap(125, 125, 125)
                 .addGroup(HeavyMealLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HeavyMealLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(HeavyMealLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(HeavyMealLayout.createSequentialGroup()
+                        .addGroup(HeavyMealLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Hm1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(HeavyMealLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(hmSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(35, 35, 35)
+                        .addGroup(HeavyMealLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Hm2, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(HeavyMealLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(hmSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(35, 35, 35)
+                        .addGroup(HeavyMealLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Hm3, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(HeavyMealLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(hmSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(29, Short.MAX_VALUE))
+                    .addGroup(HeavyMealLayout.createSequentialGroup()
+                        .addGroup(HeavyMealLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Hm4, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Hm1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(30, 30, 30))
-                    .addGroup(HeavyMealLayout.createSequentialGroup()
-                        .addGap(114, 114, 114)
+                            .addGroup(HeavyMealLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(hmSpinner4, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(35, 35, 35)
                         .addGroup(HeavyMealLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(hmSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(hmSpinner4, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(47, 47, 47)))
-                .addGroup(HeavyMealLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(HeavyMealLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Hm2, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Hm5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(HeavyMealLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
+                            .addComponent(Hm5, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(HeavyMealLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(hmSpinner5, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(35, 35, 35)
                         .addGroup(HeavyMealLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(hmSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(hmSpinner5, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                .addGroup(HeavyMealLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Hm3, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Hm6, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
-                    .addGroup(HeavyMealLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addGroup(HeavyMealLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(hmSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(hmSpinner6, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(46, Short.MAX_VALUE))
+                            .addGroup(HeavyMealLayout.createSequentialGroup()
+                                .addComponent(Hm6, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(HeavyMealLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(hmSpinner6)
+                                .addGap(15, 15, 15))))))
         );
         HeavyMealLayout.setVerticalGroup(
             HeavyMealLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HeavyMealLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addGroup(HeavyMealLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Hm2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Hm3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Hm1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(HeavyMealLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(hmSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(hmSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(hmSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(56, 56, 56)
-                .addGroup(HeavyMealLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(33, 33, 33)
+                .addGroup(HeavyMealLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(HeavyMealLayout.createSequentialGroup()
+                        .addGroup(HeavyMealLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Hm2)
+                            .addComponent(Hm3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(HeavyMealLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(hmSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(hmSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(HeavyMealLayout.createSequentialGroup()
+                        .addComponent(Hm1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(hmSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(45, 45, 45)
+                .addGroup(HeavyMealLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Hm4)
                     .addComponent(Hm5)
                     .addComponent(Hm6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(HeavyMealLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(HeavyMealLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(hmSpinner4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(hmSpinner5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(hmSpinner6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(950, 950, 950))
+                .addContainerGap(1018, Short.MAX_VALUE))
         );
 
         Category.add(HeavyMeal);
@@ -803,7 +843,8 @@ public class YankeeBite extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void D3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D3ActionPerformed
-        // TODO add your handling code here:
+        selectedFood = "D3";
+    selectedPrice = foodPrices.get("D3");
     }//GEN-LAST:event_D3ActionPerformed
 
     private void Bf1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bf1ActionPerformed
@@ -913,6 +954,36 @@ public class YankeeBite extends javax.swing.JFrame {
         case "Bf6":
             selectedQuantity = (Integer) bfSpinner6.getValue();
             break;
+        case "B1":
+            selectedQuantity = (Integer) bSpinner1.getValue();
+            break;
+        case "B2":
+            selectedQuantity = (Integer) bSpinner2.getValue();
+            break;
+        case "B3":
+            selectedQuantity = (Integer) bSpinner3.getValue();
+            break;
+        case "B4":
+            selectedQuantity = (Integer) bSpinner4.getValue();
+            break;
+        case "B5":
+            selectedQuantity = (Integer) bSpinner5.getValue();
+            break;
+        case "B6":
+            selectedQuantity = (Integer) bSpinner6.getValue();
+            break;
+        case "D1":
+            selectedQuantity = (Integer) dSpinner1.getValue();
+            break;
+        case "D2":
+            selectedQuantity = (Integer) dSpinner2.getValue();
+            break;
+        case "D3":
+            selectedQuantity = (Integer) dSpinner3.getValue();
+            break;
+        case "D4":
+            selectedQuantity = (Integer) dSpinner4.getValue();
+            break;
     }
 
     double price = foodPrices.get(selectedFood);
@@ -959,11 +1030,87 @@ public class YankeeBite extends javax.swing.JFrame {
         case "Bf6":
             bfSpinner6.setValue(0);
             break;
+        case "B1":
+            bSpinner1.setValue(0);
+            break;
+        case "B2":
+            bSpinner2.setValue(0);
+            break;
+        case "B3":
+            bSpinner3.setValue(0);
+            break;
+        case "B4":
+            bSpinner4.setValue(0);
+            break;
+        case "B5":
+            bSpinner5.setValue(0);
+            break;
+        case "B6":
+            bSpinner6.setValue(0);
+            break;
+        case "D1":
+            dSpinner1.setValue(0);
+            break;
+        case "D2":
+            dSpinner2.setValue(0);
+            break;
+        case "D3":
+            dSpinner3.setValue(0);
+            break;
+        case "D4":
+            dSpinner4.setValue(0);
+            break;
+        
     }
     
     selectedFood = "";
            
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B1ActionPerformed
+        selectedFood = "B1";
+    selectedPrice = foodPrices.get("B1");
+    }//GEN-LAST:event_B1ActionPerformed
+
+    private void B2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B2ActionPerformed
+       selectedFood = "B2";
+    selectedPrice = foodPrices.get("B2");
+    }//GEN-LAST:event_B2ActionPerformed
+
+    private void B3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B3ActionPerformed
+        selectedFood = "B3";
+    selectedPrice = foodPrices.get("B3");
+    }//GEN-LAST:event_B3ActionPerformed
+
+    private void B4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B4ActionPerformed
+        selectedFood = "B4";
+    selectedPrice = foodPrices.get("B4");
+    }//GEN-LAST:event_B4ActionPerformed
+
+    private void B5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B5ActionPerformed
+        selectedFood = "B5";
+    selectedPrice = foodPrices.get("B5");
+    }//GEN-LAST:event_B5ActionPerformed
+
+    private void B6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B6ActionPerformed
+       selectedFood = "B6";
+    selectedPrice = foodPrices.get("B6");
+    }//GEN-LAST:event_B6ActionPerformed
+
+    private void D1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D1ActionPerformed
+        selectedFood = "D1";
+    selectedPrice = foodPrices.get("D1");
+    }//GEN-LAST:event_D1ActionPerformed
+
+    private void D2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D2ActionPerformed
+         selectedFood = "D2";
+    selectedPrice = foodPrices.get("D2");
+    }//GEN-LAST:event_D2ActionPerformed
+
+    private void D4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4ActionPerformed
+        selectedFood = "D4";
+    selectedPrice = foodPrices.get("D4");
+    }//GEN-LAST:event_D4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1060,6 +1207,7 @@ public class YankeeBite extends javax.swing.JFrame {
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
