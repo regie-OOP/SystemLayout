@@ -5,7 +5,11 @@
 package FRAMES;
 
 import java.util.HashMap;
+import java.util.function.Consumer;
+import javax.swing.JComponent;
 import javax.swing.JOptionPane;
+import javax.swing.JSpinner;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -133,7 +137,6 @@ public class KantoKusina_Frame extends javax.swing.JFrame {
         phSpinner6 = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(700, 800));
 
         jPanel2.setBackground(new java.awt.Color(8, 61, 53));
         jPanel2.setPreferredSize(new java.awt.Dimension(700, 125));
@@ -240,6 +243,11 @@ public class KantoKusina_Frame extends javax.swing.JFrame {
         jPanel1.add(jButton5, gridBagConstraints);
 
         jButton6.setText("Update");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
@@ -282,6 +290,11 @@ public class KantoKusina_Frame extends javax.swing.JFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
             }
         });
         jScrollPane2.setViewportView(jTable1);
@@ -841,136 +854,306 @@ public class KantoKusina_Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton22ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-         if (selectedFood.isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Please select a food item first.");
-        return;
-    } else {
-            JOptionPane.showMessageDialog(this, "Order Selected.");
-        }
-
-   
-    
+if (selectedFood.isEmpty()) {
+    JOptionPane.showMessageDialog(this, "Please select a food item first.");
+    return;
+}
+// Determine selected quantity
     switch (selectedFood) {
-        case "Pu1":
-            selectedQuantity = (Integer) puSpinner1.getValue();
-            break;
-        case "Pu2":
-            selectedQuantity = (Integer) puSpinner2.getValue();
-            break;
-        case "Pu3":
-            selectedQuantity = (Integer) puSpinner3.getValue();
-            break;
-        case "Pu4":
-            selectedQuantity = (Integer) puSpinner4.getValue();
-            break;  
-        case "Pu5":
-            selectedQuantity = (Integer) puSpinner5.getValue();
-            break;
-        case "Pu6":
-            selectedQuantity = (Integer) puSpinner6.getValue();
-            break;
-        case "P1":
-            selectedQuantity = (Integer) pSpinner1.getValue();
-            break;
-        case "P2":
-            selectedQuantity = (Integer) pSpinner2.getValue();
-            break;
-        case "P3":
-            selectedQuantity = (Integer) pSpinner3.getValue();
-            break;
-        case "P4":
-            selectedQuantity = (Integer) pSpinner4.getValue();
-            break;
-        case "P5":
-            selectedQuantity = (Integer) pSpinner5.getValue();
-            break;
-        case "P6":
-            selectedQuantity = (Integer) pSpinner6.getValue();
-            break;
-        case "Ph1":
-            selectedQuantity = (Integer) phSpinner1.getValue();
-            break;
-        case "Ph2":
-            selectedQuantity = (Integer) phSpinner2.getValue();
-            break;
-        case "Ph3":
-            selectedQuantity = (Integer) phSpinner3.getValue();
-            break;
-        case "Ph4":
-            selectedQuantity = (Integer) phSpinner4.getValue();
-            break;
-        case "Ph5":
-            selectedQuantity = (Integer) phSpinner5.getValue();
-            break;
-        case "Ph6":
-            selectedQuantity = (Integer) phSpinner6.getValue();
-            break;
+    case "Pu1": selectedQuantity = (Integer) puSpinner1.getValue(); break;
+    case "Pu2": selectedQuantity = (Integer) puSpinner2.getValue(); break;
+    case "Pu3": selectedQuantity = (Integer) puSpinner3.getValue(); break;
+    case "Pu4": selectedQuantity = (Integer) puSpinner4.getValue(); break;
+    case "Pu5": selectedQuantity = (Integer) puSpinner5.getValue(); break;
+    case "Pu6": selectedQuantity = (Integer) puSpinner6.getValue(); break;
+
+    case "P1": selectedQuantity = (Integer) pSpinner1.getValue(); break;
+    case "P2": selectedQuantity = (Integer) pSpinner2.getValue(); break;
+    case "P3": selectedQuantity = (Integer) pSpinner3.getValue(); break;
+    case "P4": selectedQuantity = (Integer) pSpinner4.getValue(); break;
+    case "P5": selectedQuantity = (Integer) pSpinner5.getValue(); break;
+    case "P6": selectedQuantity = (Integer) pSpinner6.getValue(); break;
+
+    case "Ph1": selectedQuantity = (Integer) phSpinner1.getValue(); break;
+    case "Ph2": selectedQuantity = (Integer) phSpinner2.getValue(); break;
+    case "Ph3": selectedQuantity = (Integer) phSpinner3.getValue(); break;
+    case "Ph4": selectedQuantity = (Integer) phSpinner4.getValue(); break;
+    case "Ph5": selectedQuantity = (Integer) phSpinner5.getValue(); break;
+    case "Ph6": selectedQuantity = (Integer) phSpinner6.getValue(); break;
+
+    default: selectedQuantity = 0;
     }
+
+// Check if quantity is valid
+    if (selectedQuantity == 0) {
+    JOptionPane.showMessageDialog(this, "Quantity is zero. Please set a valid quantity before adding.");
+    return;
+}
+
+// Passed all checks
+    JOptionPane.showMessageDialog(this, "Order Selected.");
+
+// Calculate total
     double price = foodPrices.get(selectedFood);
     double totalAmount = price * selectedQuantity;
 
+// Get food display name
+    String foodDisplayName = switch (selectedFood) {
+    case "Pu1" -> "Pu1 Adobong Asting";
+    case "Pu2" -> "Pu2 Asim-Tamis Sinigang";
+    case "Pu3" -> "Pu3 Kanto Kare-Kare";
+    case "Pu4" -> "Pu4 Menudong Masa";
+    case "Pu5" -> "Pu5 Express Lang Bicol";
+    case "Pu6" -> "Pu6 Tila-Perfect";
+
+    case "P1" -> "P1 Bulaklak Blask";
+    case "P2" -> "P2 Tropa Tokwa Baboy";
+    case "P3" -> "P3 Sizzlin' Sisig Sarap";
+    case "P4" -> "P4 Shanghai Sarap Sticks";
+    case "P5" -> "P5 Kanto Kwek Attack";
+    case "P6" -> "P6 Isaw Wow";
+
+    case "Ph1" -> "Ph1 Halo Haloin Mo";
+    case "Ph2" -> "Ph2 Turrific Turon";
+    case "Ph3" -> "Ph3 Flantastic Delight";
+    case "Ph4" -> "Ph4 Maissarap";
+    case "Ph5" -> "Ph5 Biko Bida";
+    case "Ph6" -> "Ph6 Minatamis";
+
+    default -> selectedFood;
+    };
+
+// Add order to table
     DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-    model.addRow(new Object[]{selectedFood, selectedQuantity, totalAmount});
+    model.addRow(new Object[]{foodDisplayName, selectedQuantity, totalAmount});
     updateTotalAmount();
 
+// Reset spinner to 0
     switch (selectedFood) {
-        case "Pu1":
-            puSpinner1.setValue(0);
-            break;
-        case "Pu2":
-            puSpinner2.setValue(0);
-            break;
-        case "Pu3":
-            puSpinner3.setValue(0);
-            break;
-        case "Pu4":
-            puSpinner4.setValue(0);
-            break;  
-        case "Pu5":
-            puSpinner5.setValue(0);
-            break;
-        case "Pu6":
-            puSpinner6.setValue(0);
-            break;
-        case "P1":
-            pSpinner1.setValue(0);
-            break;
-        case "P2":
-            pSpinner2.setValue(0);
-            break;
-        case "P3":
-            pSpinner3.setValue(0);
-            break;
-        case "P4":
-            pSpinner4.setValue(0);
-            break;
-        case "P5":
-            pSpinner5.setValue(0);
-            break;
-        case "P6":
-            pSpinner6.setValue(0);
-            break;
-        case "Ph1":
-            phSpinner1.setValue(0);
-            break;
-        case "Ph2":
-            phSpinner2.setValue(0);
-            break;
-        case "Ph3":
-            phSpinner3.setValue(0);
-            break;
-        case "Ph4":
-            phSpinner4.setValue(0);
-            break;
-        case "Ph5":
-            phSpinner5.setValue(0);
-            break;
-        case "Ph6":
-            phSpinner6.setValue(0);
-            break;
-    }
+    case "Pu1": puSpinner1.setValue(0); break;
+    case "Pu2": puSpinner2.setValue(0); break;
+    case "Pu3": puSpinner3.setValue(0); break;
+    case "Pu4": puSpinner4.setValue(0); break;
+    case "Pu5": puSpinner5.setValue(0); break;
+    case "Pu6": puSpinner6.setValue(0); break;
+
+    case "P1": pSpinner1.setValue(0); break;
+    case "P2": pSpinner2.setValue(0); break;
+    case "P3": pSpinner3.setValue(0); break;
+    case "P4": pSpinner4.setValue(0); break;
+    case "P5": pSpinner5.setValue(0); break;
+    case "P6": pSpinner6.setValue(0); break;
+
+    case "Ph1": phSpinner1.setValue(0); break;
+    case "Ph2": phSpinner2.setValue(0); break;
+    case "Ph3": phSpinner3.setValue(0); break;
+    case "Ph4": phSpinner4.setValue(0); break;
+    case "Ph5": phSpinner5.setValue(0); break;
+    case "Ph6": phSpinner6.setValue(0); break;
+}
+
+// Clear selected food for safety
     selectedFood = "";
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    int selectedRow = jTable1.getSelectedRow();
+    if (selectedRow == -1) {
+    JOptionPane.showMessageDialog(this, "Please select a row to update.");
+    return;
+    }
+
+    String selectedFoodDisplay = (String) jTable1.getValueAt(selectedRow, 0);
+    int updatedQuantity = 0;
+    double pricePerItem = 0.0;
+    String foodCode = "";
+
+switch (selectedFoodDisplay) {
+    case "Pu1 Adobong Asting":
+        updatedQuantity = (Integer) puSpinner1.getValue();
+        pricePerItem = foodPrices.get("Pu1");
+        foodCode = "Pu1";
+        break;
+    case "Pu2 Asim-Tamis Sinigang":
+        updatedQuantity = (Integer) puSpinner2.getValue();
+        pricePerItem = foodPrices.get("Pu2");
+        foodCode = "Pu2";
+        break;
+    case "Pu3 Kanto Kare-Kare":
+        updatedQuantity = (Integer) puSpinner3.getValue();
+        pricePerItem = foodPrices.get("Pu3");
+        foodCode = "Pu3";
+        break;
+    case "Pu4 Menudong Masa":
+        updatedQuantity = (Integer) puSpinner4.getValue();
+        pricePerItem = foodPrices.get("Pu4");
+        foodCode = "Pu4";
+        break;
+    case "Pu5 Express Lang Bicol":
+        updatedQuantity = (Integer) puSpinner5.getValue();
+        pricePerItem = foodPrices.get("Pu5");
+        foodCode = "Pu5";
+        break;
+    case "Pu6 Tila-Perfect":
+        updatedQuantity = (Integer) puSpinner6.getValue();
+        pricePerItem = foodPrices.get("Pu6");
+        foodCode = "Pu6";
+        break;
+    case "P1 Bulaklak Blask":
+        updatedQuantity = (Integer) pSpinner1.getValue();
+        pricePerItem = foodPrices.get("P1");
+        foodCode = "P1";
+        break;
+    case "P2 Tropa Tokwa Baboy":
+        updatedQuantity = (Integer) pSpinner2.getValue();
+        pricePerItem = foodPrices.get("P2");
+        foodCode = "P2";
+        break;
+    case "P3 Sizzlin' Sisig Sarap":
+        updatedQuantity = (Integer) pSpinner3.getValue();
+        pricePerItem = foodPrices.get("P3");
+        foodCode = "P3";
+        break;
+    case "P4 Shanghai Sarap Sticks":
+        updatedQuantity = (Integer) pSpinner4.getValue();
+        pricePerItem = foodPrices.get("P4");
+        foodCode = "P4";
+        break;
+    case "P5 Kanto Kwek Attack":
+        updatedQuantity = (Integer) pSpinner5.getValue();
+        pricePerItem = foodPrices.get("P5");
+        foodCode = "P5";
+        break;
+    case "P6 Isaw Wow":
+        updatedQuantity = (Integer) pSpinner6.getValue();
+        pricePerItem = foodPrices.get("P6");
+        foodCode = "P6";
+        break;
+    case "Ph1 Halo Haloin Mo":
+        updatedQuantity = (Integer) phSpinner1.getValue();
+        pricePerItem = foodPrices.get("Ph1");
+        foodCode = "Ph1";
+        break;
+    case "Ph2 Turrific Turon":
+        updatedQuantity = (Integer) phSpinner2.getValue();
+        pricePerItem = foodPrices.get("Ph2");
+        foodCode = "Ph2";
+        break;
+    case "Ph3 Flantastic Delight":
+        updatedQuantity = (Integer) phSpinner3.getValue();
+        pricePerItem = foodPrices.get("Ph3");
+        foodCode = "Ph3";
+        break;
+    case "Ph4 Maissarap":
+        updatedQuantity = (Integer) phSpinner4.getValue();
+        pricePerItem = foodPrices.get("Ph4");
+        foodCode = "Ph4";
+        break;
+    case "Ph5 Biko Bida":
+        updatedQuantity = (Integer) phSpinner5.getValue();
+        pricePerItem = foodPrices.get("Ph5");
+        foodCode = "Ph5";
+        break;
+    case "Ph6 Minatamis":
+        updatedQuantity = (Integer) phSpinner6.getValue();
+        pricePerItem = foodPrices.get("Ph6");
+        foodCode = "Ph6";
+        break;
+         default:
+        JOptionPane.showMessageDialog(this, "Invalid food item.");
+        return;
+    }
+
+    double updatedTotal = updatedQuantity * pricePerItem;
+
+    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+    model.setValueAt(updatedQuantity, selectedRow, 1);
+    model.setValueAt(updatedTotal, selectedRow, 2);
+
+    updateTotalAmount();
+    JOptionPane.showMessageDialog(this, "Order updated successfully.");
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+     int selectedRow = jTable1.getSelectedRow();
+if (selectedRow != -1) {
+    String selectedFood = (String) jTable1.getValueAt(selectedRow, 0);
+    int quantity = (int) jTable1.getValueAt(selectedRow, 1);
+
+    Consumer<JSpinner> focusSpinner = spinner -> {
+        spinner.setValue(quantity);
+        JComponent editor = spinner.getEditor();
+        if (editor instanceof JSpinner.DefaultEditor) {
+            JTextField textField = ((JSpinner.DefaultEditor) editor).getTextField();
+            textField.requestFocusInWindow();
+            textField.selectAll();
+        }
+    };
+
+    switch (selectedFood) {
+        case "Pu1 Adobong Asting":
+            focusSpinner.accept(puSpinner1);
+            break;
+        case "Pu2 Asim-Tamis Sinigang":
+            focusSpinner.accept(puSpinner2);
+            break;
+        case "Pu3 Kanto Kare-Kare":
+            focusSpinner.accept(puSpinner3);
+            break;
+        case "Pu4 Menudong Masa":
+            focusSpinner.accept(puSpinner4);
+            break;
+        case "Pu5 Express Lang Bicol":
+            focusSpinner.accept(puSpinner5);
+            break;
+        case "Pu6 Tila-Perfect":
+            focusSpinner.accept(puSpinner6);
+            break;
+
+        case "P1 Bulaklak Blask":
+            focusSpinner.accept(pSpinner1);
+            break;
+        case "P2 Tropa Tokwa Baboy":
+            focusSpinner.accept(pSpinner2);
+            break;
+        case "P3 Sizzlin' Sisig Sarap":
+            focusSpinner.accept(pSpinner3);
+            break;
+        case "P4 Shanghai Sarap Sticks":
+            focusSpinner.accept(pSpinner4);
+            break;
+        case "P5 Kanto Kwek Attack":
+            focusSpinner.accept(pSpinner5);
+            break;
+        case "P6 Isaw Wow":
+            focusSpinner.accept(pSpinner6);
+            break;
+
+        case "Ph1 Halo Haloin Mo":
+            focusSpinner.accept(phSpinner1);
+            break;
+        case "Ph2 Turrific Turon":
+            focusSpinner.accept(phSpinner2);
+            break;
+        case "Ph3 Flantastic Delight":
+            focusSpinner.accept(phSpinner3);
+            break;
+        case "Ph4 Maissarap":
+            focusSpinner.accept(phSpinner4);
+            break;
+        case "Ph5 Biko Bida":
+            focusSpinner.accept(phSpinner5);
+            break;
+        case "Ph6 Minatamis":
+            focusSpinner.accept(phSpinner6);
+            break;
+
+        default:
+            JOptionPane.showMessageDialog(this, "Food item not recognized.");
+            break;
+    }
+}
+    }//GEN-LAST:event_jTable1MouseClicked
 
     /**
      * @param args the command line arguments

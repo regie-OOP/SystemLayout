@@ -5,7 +5,11 @@
 package FRAMES;
 
 import java.util.HashMap;
+import java.util.function.Consumer;
+import javax.swing.JComponent;
 import javax.swing.JOptionPane;
+import javax.swing.JSpinner;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -146,7 +150,6 @@ public class YankeeBite extends javax.swing.JFrame {
         hmSpinner6 = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(700, 800));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setPreferredSize(new java.awt.Dimension(699, 125));
@@ -180,6 +183,11 @@ public class YankeeBite extends javax.swing.JFrame {
         jButton3.setText("DELETE ORDER");
 
         jButton4.setText("UPDATE ORDER");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton8.setText("PAY");
 
@@ -294,6 +302,11 @@ public class YankeeBite extends javax.swing.JFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(jTable1);
@@ -550,15 +563,16 @@ public class YankeeBite extends javax.swing.JFrame {
             BreakfastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BreakfastLayout.createSequentialGroup()
                 .addGap(34, 34, 34)
-                .addGroup(BreakfastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(BreakfastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(B1)
                     .addComponent(B2)
                     .addComponent(B3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(BreakfastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(BreakfastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(bSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(BreakfastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(bSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(43, 43, 43)
                 .addGroup(BreakfastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(B5)
@@ -648,8 +662,8 @@ public class YankeeBite extends javax.swing.JFrame {
             .addGroup(DrinksLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addGroup(DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(D1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(D1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(D2, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(D3, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -908,162 +922,160 @@ public class YankeeBite extends javax.swing.JFrame {
     }//GEN-LAST:event_Bf6ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-         if (selectedFood.isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Please select a food item first.");
-        return;
-    } else {
-            JOptionPane.showMessageDialog(this, "Order Selected.");
-        }
+    if (selectedFood.isEmpty()) {
+    JOptionPane.showMessageDialog(this, "Please select a food item first.");
+    return;
+}
 
-   
-    
-    switch (selectedFood) {
-        case "Hm1":
-            selectedQuantity = (Integer) hmSpinner1.getValue();
-            break;
-        case "Hm2":
-            selectedQuantity = (Integer) hmSpinner2.getValue();
-            break;
-        case "Hm3":
-            selectedQuantity = (Integer) hmSpinner3.getValue();
-            break;
-        case "Hm4":
-            selectedQuantity = (Integer) hmSpinner4.getValue();
-            break;  
-        case "Hm5":
-            selectedQuantity = (Integer) hmSpinner5.getValue();
-            break;
-        case "Hm6":
-            selectedQuantity = (Integer) hmSpinner6.getValue();
-            break;
-        case "Bf1":
-            selectedQuantity = (Integer) bfSpinner1.getValue();
-            break;
-        case "Bf2":
-            selectedQuantity = (Integer) bfSpinner2.getValue();
-            break;
-        case "Bf3":
-            selectedQuantity = (Integer) bfSpinner3.getValue();
-            break;
-        case "Bf4":
-            selectedQuantity = (Integer) bfSpinner4.getValue();
-            break;
-        case "Bf5":
-            selectedQuantity = (Integer) bfSpinner5.getValue();
-            break;
-        case "Bf6":
-            selectedQuantity = (Integer) bfSpinner6.getValue();
-            break;
-        case "B1":
-            selectedQuantity = (Integer) bSpinner1.getValue();
-            break;
-        case "B2":
-            selectedQuantity = (Integer) bSpinner2.getValue();
-            break;
-        case "B3":
-            selectedQuantity = (Integer) bSpinner3.getValue();
-            break;
-        case "B4":
-            selectedQuantity = (Integer) bSpinner4.getValue();
-            break;
-        case "B5":
-            selectedQuantity = (Integer) bSpinner5.getValue();
-            break;
-        case "B6":
-            selectedQuantity = (Integer) bSpinner6.getValue();
-            break;
-        case "D1":
-            selectedQuantity = (Integer) dSpinner1.getValue();
-            break;
-        case "D2":
-            selectedQuantity = (Integer) dSpinner2.getValue();
-            break;
-        case "D3":
-            selectedQuantity = (Integer) dSpinner3.getValue();
-            break;
-        case "D4":
-            selectedQuantity = (Integer) dSpinner4.getValue();
-            break;
-    }
+// Determine selected quantity based on selected food
+switch (selectedFood) {
+    case "Hm1":
+        selectedQuantity = (Integer) hmSpinner1.getValue();
+        break;
+    case "Hm2":
+        selectedQuantity = (Integer) hmSpinner2.getValue();
+        break;
+    case "Hm3":
+        selectedQuantity = (Integer) hmSpinner3.getValue();
+        break;
+    case "Hm4":
+        selectedQuantity = (Integer) hmSpinner4.getValue();
+        break;
+    case "Hm5":
+        selectedQuantity = (Integer) hmSpinner5.getValue();
+        break;
+    case "Hm6":
+        selectedQuantity = (Integer) hmSpinner6.getValue();
+        break;
+    case "Bf1":
+        selectedQuantity = (Integer) bfSpinner1.getValue();
+        break;
+    case "Bf2":
+        selectedQuantity = (Integer) bfSpinner2.getValue();
+        break;
+    case "Bf3":
+        selectedQuantity = (Integer) bfSpinner3.getValue();
+        break;
+    case "Bf4":
+        selectedQuantity = (Integer) bfSpinner4.getValue();
+        break;
+    case "Bf5":
+        selectedQuantity = (Integer) bfSpinner5.getValue();
+        break;
+    case "Bf6":
+        selectedQuantity = (Integer) bfSpinner6.getValue();
+        break;
+    case "B1":
+        selectedQuantity = (Integer) bSpinner1.getValue();
+        break;
+    case "B2":
+        selectedQuantity = (Integer) bSpinner2.getValue();
+        break;
+    case "B3":
+        selectedQuantity = (Integer) bSpinner3.getValue();
+        break;
+    case "B4":
+        selectedQuantity = (Integer) bSpinner4.getValue();
+        break;
+    case "B5":
+        selectedQuantity = (Integer) bSpinner5.getValue();
+        break;
+    case "B6":
+        selectedQuantity = (Integer) bSpinner6.getValue();
+        break;
+    case "D1":
+        selectedQuantity = (Integer) dSpinner1.getValue();
+        break;
+    case "D2":
+        selectedQuantity = (Integer) dSpinner2.getValue();
+        break;
+    case "D3":
+        selectedQuantity = (Integer) dSpinner3.getValue();
+        break;
+    case "D4":
+        selectedQuantity = (Integer) dSpinner4.getValue();
+        break;
+    default:
+        selectedQuantity = 0;
+}
 
-    double price = foodPrices.get(selectedFood);
-    double totalAmount = price * selectedQuantity;
+// Check if quantity is valid
+if (selectedQuantity == 0) {
+    JOptionPane.showMessageDialog(this, "Quantity is zero. Please set a valid quantity before adding.");
+    return;
+}
 
-    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-    model.addRow(new Object[]{selectedFood, selectedQuantity, totalAmount});
-    updateTotalAmount();
+// If both checks passed
+JOptionPane.showMessageDialog(this, "Order Selected.");
 
-    switch (selectedFood) {
-        case "Hm1":
-            hmSpinner1.setValue(0);
-            break;
-        case "Hm2":
-            hmSpinner2.setValue(0);
-            break;
-        case "Hm3":
-            hmSpinner3.setValue(0);
-            break;
-        case "Hm4":
-            hmSpinner4.setValue(0);
-            break;  
-        case "Hm5":
-            hmSpinner5.setValue(0);
-            break;
-        case "Hm6":
-            hmSpinner6.setValue(0);
-            break;
-        case "Bf1":
-            bfSpinner1.setValue(0);
-            break;
-        case "Bf2":
-            bfSpinner2.setValue(0);
-            break;
-        case "Bf3":
-            bfSpinner3.setValue(0);
-            break;
-        case "Bf4":
-            bfSpinner4.setValue(0);
-            break;
-        case "Bf5":
-            bfSpinner5.setValue(0);
-            break;
-        case "Bf6":
-            bfSpinner6.setValue(0);
-            break;
-        case "B1":
-            bSpinner1.setValue(0);
-            break;
-        case "B2":
-            bSpinner2.setValue(0);
-            break;
-        case "B3":
-            bSpinner3.setValue(0);
-            break;
-        case "B4":
-            bSpinner4.setValue(0);
-            break;
-        case "B5":
-            bSpinner5.setValue(0);
-            break;
-        case "B6":
-            bSpinner6.setValue(0);
-            break;
-        case "D1":
-            dSpinner1.setValue(0);
-            break;
-        case "D2":
-            dSpinner2.setValue(0);
-            break;
-        case "D3":
-            dSpinner3.setValue(0);
-            break;
-        case "D4":
-            dSpinner4.setValue(0);
-            break;
-        
-    }
-    
-    selectedFood = "";
+// Price and total calculation
+double price = foodPrices.get(selectedFood);
+double totalAmount = price * selectedQuantity;
+
+// Determine full item name
+String itemName = switch (selectedFood) {
+    case "Hm1" -> "Hm1 1pc Yankee Fried Chicken";
+    case "Hm2" -> "Hm2 1pc Yankee Fried Chicken with Spaghetti";
+    case "Hm3" -> "Hm3 6pcs Yankee Nuggets";
+    case "Hm4" -> "Hm4 1pc Yankee Fried Chicken with Burger Steak";
+    case "Hm5" -> "Hm5 1pc Yankee Fried Chicken with Palabok";
+    case "Hm6" -> "Hm6 2pcs Yankee Fried Chicken";
+
+    case "Bf1" -> "Bf1 Solo Slammer Burger";
+    case "Bf2" -> "Bf2 Double Dawn Yankee Burger";
+    case "Bf3" -> "Bf3 Double Load Cheese Burger";
+    case "Bf4" -> "Bf4 All Star Hotdog w/ Bun";
+    case "Bf5" -> "Bf5 Freedom Fries";
+    case "Bf6" -> "Bf6 Loaded Liberty Fries";
+
+    case "B1" -> "B1 Bacon n' Boom";
+    case "B2" -> "B2 Corned Beef Clash";
+    case "B3" -> "B3 All American Stackwich";
+    case "B4" -> "B4 Oaty Mornin'";
+    case "B5" -> "B5 Fluffy Fuel Cakes";
+    case "B6" -> "B6 Crunch Time Bowl";
+
+    case "D1" -> "D1 Liberty Leaf Cooler";
+    case "D2" -> "D2 Fizzy Patrol";
+    case "D3" -> "D3 Citrus Pop Splash";
+    case "D4" -> "D4 Shake n' Roll";
+
+    default -> selectedFood;
+};
+
+DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+model.addRow(new Object[]{itemName, selectedQuantity, totalAmount});
+updateTotalAmount();
+
+switch (selectedFood) {
+    case "Hm1": hmSpinner1.setValue(0); break;
+    case "Hm2": hmSpinner2.setValue(0); break;
+    case "Hm3": hmSpinner3.setValue(0); break;
+    case "Hm4": hmSpinner4.setValue(0); break;
+    case "Hm5": hmSpinner5.setValue(0); break;
+    case "Hm6": hmSpinner6.setValue(0); break;
+
+    case "Bf1": bfSpinner1.setValue(0); break;
+    case "Bf2": bfSpinner2.setValue(0); break;
+    case "Bf3": bfSpinner3.setValue(0); break;
+    case "Bf4": bfSpinner4.setValue(0); break;
+    case "Bf5": bfSpinner5.setValue(0); break;
+    case "Bf6": bfSpinner6.setValue(0); break;
+
+    case "B1": bSpinner1.setValue(0); break;
+    case "B2": bSpinner2.setValue(0); break;
+    case "B3": bSpinner3.setValue(0); break;
+    case "B4": bSpinner4.setValue(0); break;
+    case "B5": bSpinner5.setValue(0); break;
+    case "B6": bSpinner6.setValue(0); break;
+
+    case "D1": dSpinner1.setValue(0); break;
+    case "D2": dSpinner2.setValue(0); break;
+    case "D3": dSpinner3.setValue(0); break;
+    case "D4": dSpinner4.setValue(0); break;
+}
+
+selectedFood = "";
            
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -1111,6 +1123,215 @@ public class YankeeBite extends javax.swing.JFrame {
         selectedFood = "D4";
     selectedPrice = foodPrices.get("D4");
     }//GEN-LAST:event_D4ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    int selectedRow = jTable1.getSelectedRow();
+    if (selectedRow == -1) {
+    JOptionPane.showMessageDialog(this, "Please select a row to update.");
+    return;
+    }
+
+    String selectedFood = (String) jTable1.getValueAt(selectedRow, 0);
+    int updatedQuantity = 0;
+    double pricePerItem = 0.0;
+
+    switch (selectedFood) {
+    case "Hm1 1pc Yankee Fried Chicken":
+        updatedQuantity = (Integer) hmSpinner1.getValue();
+        pricePerItem = foodPrices.get("Hm1");
+        break;
+    case "Hm2 1pc Yankee Fried Chicken with Spaghetti":
+        updatedQuantity = (Integer) hmSpinner2.getValue();
+        pricePerItem = foodPrices.get("Hm2");
+        break;
+    case "Hm3 6pcs Yankee Nuggets":
+        updatedQuantity = (Integer) hmSpinner3.getValue();
+        pricePerItem = foodPrices.get("Hm3");
+        break;
+    case "Hm4 1pc Yankee Fried Chicken with Burger Steak":
+        updatedQuantity = (Integer) hmSpinner4.getValue();
+        pricePerItem = foodPrices.get("Hm4");
+        break;
+    case "Hm5 1pc Yankee Fried Chicken with Palabok":
+        updatedQuantity = (Integer) hmSpinner5.getValue();
+        pricePerItem = foodPrices.get("Hm5");
+        break;
+    case "Hm6 2pcs Yankee Fried Chicken":
+        updatedQuantity = (Integer) hmSpinner6.getValue();
+        pricePerItem = foodPrices.get("Hm6");
+        break;
+
+    case "Bf1 Solo Slammer Burger":
+        updatedQuantity = (Integer) bfSpinner1.getValue();
+        pricePerItem = foodPrices.get("Bf1");
+        break;
+    case "Bf2 Double Dawn Yankee Burger":
+        updatedQuantity = (Integer) bfSpinner2.getValue();
+        pricePerItem = foodPrices.get("Bf2");
+        break;
+    case "Bf3 Double Load Cheese Burger":
+        updatedQuantity = (Integer) bfSpinner3.getValue();
+        pricePerItem = foodPrices.get("Bf3");
+        break;
+    case "Bf4 All Star Hotdog w/ Bun":
+        updatedQuantity = (Integer) bfSpinner4.getValue();
+        pricePerItem = foodPrices.get("Bf4");
+        break;
+    case "Bf5 Freedom Fries":
+        updatedQuantity = (Integer) bfSpinner5.getValue();
+        pricePerItem = foodPrices.get("Bf5");
+        break;
+    case "Bf6 Loaded Liberty Fries":
+        updatedQuantity = (Integer) bfSpinner6.getValue();
+        pricePerItem = foodPrices.get("Bf6");
+        break;
+
+    case "B1 Bacon n' Boom":
+        updatedQuantity = (Integer) bSpinner1.getValue();
+        pricePerItem = foodPrices.get("B1");
+        break;
+    case "B2 Corned Beef Clash":
+        updatedQuantity = (Integer) bSpinner2.getValue();
+        pricePerItem = foodPrices.get("B2");
+        break;
+    case "B3 All American Stackwich":
+        updatedQuantity = (Integer) bSpinner3.getValue();
+        pricePerItem = foodPrices.get("B3");
+        break;
+    case "B4 Oaty Mornin'":
+        updatedQuantity = (Integer) bSpinner4.getValue();
+        pricePerItem = foodPrices.get("B4");
+        break;
+    case "B5 Fluffy Fuel Cakes":
+        updatedQuantity = (Integer) bSpinner5.getValue();
+        pricePerItem = foodPrices.get("B5");
+        break;
+    case "B6 Crunch Time Bowl":
+        updatedQuantity = (Integer) bSpinner6.getValue();
+        pricePerItem = foodPrices.get("B6");
+        break;
+
+    case "D1 Liberty Leaf Cooler":
+        updatedQuantity = (Integer) dSpinner1.getValue();
+        pricePerItem = foodPrices.get("D1");
+        break;
+    case "D2 Fizzy Patrol":
+        updatedQuantity = (Integer) dSpinner2.getValue();
+        pricePerItem = foodPrices.get("D2");
+        break;
+    case "D3 Citrus Pop Splash":
+        updatedQuantity = (Integer) dSpinner3.getValue();
+        pricePerItem = foodPrices.get("D3");
+        break;
+    case "D4 Shake n' Roll":
+        updatedQuantity = (Integer) dSpinner4.getValue();
+        pricePerItem = foodPrices.get("D4");
+        break;
+
+    default:
+        JOptionPane.showMessageDialog(this, "Invalid food item.");
+        return;
+}
+
+    double updatedTotal = updatedQuantity * pricePerItem;
+    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+    model.setValueAt(updatedQuantity, selectedRow, 1);
+    model.setValueAt(updatedTotal, selectedRow, 2);
+
+    updateTotalAmount(); 
+    JOptionPane.showMessageDialog(this, "Order updated successfully.");
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+   int selectedRow = jTable1.getSelectedRow();
+    if (selectedRow != -1) {
+    String selectedFood = (String) jTable1.getValueAt(selectedRow, 0);
+    int quantity = (int) jTable1.getValueAt(selectedRow, 1);
+
+   
+    Consumer<JSpinner> focusSpinner = spinner -> {
+        spinner.setValue(quantity);
+        JComponent editor = spinner.getEditor();
+        if (editor instanceof JSpinner.DefaultEditor) {
+            JTextField textField = ((JSpinner.DefaultEditor) editor).getTextField();
+            textField.requestFocusInWindow(); 
+            textField.selectAll(); 
+        }
+    };
+
+    switch (selectedFood) {
+        case "Hm1 1pc Yankee Fried Chicken":
+            focusSpinner.accept(hmSpinner1);
+            break;
+        case "Hm2 1pc Yankee Fried Chicken with Spaghetti":
+            focusSpinner.accept(hmSpinner2);
+            break;
+        case "Hm3 6pcs Yankee Nuggets":
+            focusSpinner.accept(hmSpinner3);
+            break;
+        case "Hm4 1pc Yankee Fried Chicken with Burger Steak":
+            focusSpinner.accept(hmSpinner4);
+            break;
+        case "Hm5 1pc Yankee Fried Chicken with Palabok":
+            focusSpinner.accept(hmSpinner5);
+            break;
+        case "Hm6 2pcs Yankee Fried Chicken":
+            focusSpinner.accept(hmSpinner6);
+            break;
+
+        case "Bf1 Solo Slammer Burger":
+            focusSpinner.accept(bfSpinner1);
+            break;
+        case "Bf2 Double Dawn Yankee Burger":
+            focusSpinner.accept(bfSpinner2);
+            break;
+        case "Bf3 Double Load Cheese Burger":
+            focusSpinner.accept(bfSpinner3);
+            break;
+        case "Bf4 All Star Hotdog w/ Bun":
+            focusSpinner.accept(bfSpinner4);
+            break;
+        case "Bf5 Freedom Fries":
+            focusSpinner.accept(bfSpinner5);
+            break;
+        case "Bf6 Loaded Liberty Fries":
+            focusSpinner.accept(bfSpinner6);
+            break;
+
+        case "B1 Bacon n' Boom":
+            focusSpinner.accept(bSpinner1);
+            break;
+        case "B2 Corned Beef Clash":
+            focusSpinner.accept(bSpinner2);
+            break;
+        case "B3 All American Stackwich":
+            focusSpinner.accept(bSpinner3);
+            break;
+        case "B4 Oaty Mornin'":
+            focusSpinner.accept(bSpinner4);
+            break;
+        case "B5 Fluffy Fuel Cakes":
+            focusSpinner.accept(bSpinner5);
+            break;
+        case "B6 Crunch Time Bowl":
+            focusSpinner.accept(bSpinner6);
+            break;
+
+        case "D1 Liberty Leaf Cooler":
+            focusSpinner.accept(dSpinner1);
+            break;
+        case "D2 Fizzy Patrol":
+            focusSpinner.accept(dSpinner2);
+            break;
+        case "D3 Citrus Pop Splash":
+            focusSpinner.accept(dSpinner3);
+            break;
+        case "D4 Shake n' Roll":
+            focusSpinner.accept(dSpinner4);
+            break;
+    }
+    }
+    }//GEN-LAST:event_jTable1MouseClicked
 
     /**
      * @param args the command line arguments
